@@ -4,14 +4,7 @@ function Beacon(el, opts) {
 
     el.jb_range = opts.range;
     el.jb_destroy = function () {
-        var i, len = beacons.length;
-        for (i = 0; i < len; i += 1) {
-            if (beacons[i] === el) {
-                beacons.splice(i, 1);
-                i -= 1;
-                len -= 1;
-            }
-        }
+        destroyBeacon(el);
     };
     el.jb_handler = function () {
         var $el = jQuery(el);
@@ -25,4 +18,20 @@ function Beacon(el, opts) {
         el.jb_active = true;
     }
     return el;
+}
+
+/**
+ * @return {Number} Count of elements removed.
+ */
+function destroyBeacon(el) {
+    var i, len = beacons.length, cnt = 0;
+    for (i = 0; i < len; i += 1) {
+        if (beacons[i] === el) {
+            beacons.splice(i, 1);
+            i -= 1;
+            len -= 1;
+            cnt += 1;
+        }
+    }
+    return cnt;
 }

@@ -1,5 +1,3 @@
-// Interval hash used for performance throttling.
-var hash = false;
 // Refresh rate of the heartbeat in milliseconds.
 var throttle = 80;
 // The container to which the scroll event is bound.

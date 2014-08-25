@@ -16,6 +16,15 @@ module.exports = function (grunt) {
                     outfile: 'tests/_SpecRunner-single.html'
                 }
             },
+            'dist-other': {
+                src: 'dist/**/*.js',
+                options: {
+                    specs: [
+                        'tests/heart.spec.js'
+                    ],
+                    outfile: 'tests/_SpecRunner-other.html'
+                }
+            },
             src: {
                 src: [
                     'bower_components/jquery-near-viewport/dist/near-viewport.min.js',
@@ -24,9 +33,10 @@ module.exports = function (grunt) {
                 options: {
                     specs: [
                         'tests/global-cmds.spec.js',
-                        'tests/beacon-cmds.spec.js'
+                        'tests/beacon-cmds.spec.js',
+                        'tests/heart.spec.js'
                     ],
-                    keepRunner: false,
+                    outfile: 'tests/_SpecRunner-dev.html',
                     display: 'full',
                     summary: false
                 }
