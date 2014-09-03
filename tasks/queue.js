@@ -3,9 +3,10 @@ module.exports = function (grunt) {
         queue: {
             'test-dist': {
                 tasks: [
-                    'jasmine:dist-global',
-                    'jasmine:dist-single',
-                    'jasmine:dist-other'
+                    //'jasmine:dist-global',
+                    //'jasmine:dist-single',
+                    //'jasmine:dist-other'
+                    'jasmine:dist-solo'
                 ]
             }
         }

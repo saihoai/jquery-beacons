@@ -2,6 +2,13 @@ var resolve = require('bower-path');
 module.exports = function (grunt) {
     grunt.config.merge({
         jasmine: {
+            'dist-solo': {
+                src: 'dist/**/*.js',
+                options: {
+                    specs: 'tests/**/*.spec.js',
+                    outfile: 'tests/_SpecRunner-solo.html'
+                }
+            },
             'dist-global': {
                 src: 'dist/**/*.js',
                 options: {
@@ -29,9 +36,7 @@ module.exports = function (grunt) {
                     'src/**/*.js'
                 ],
                 options: {
-                    specs: [
-                        'tests/**/*.spec.js'
-                    ],
+                    specs: 'tests/**/*.spec.js',
                     outfile: 'tests/_SpecRunner-dev.html',
                     display: 'full',
                     summary: false
